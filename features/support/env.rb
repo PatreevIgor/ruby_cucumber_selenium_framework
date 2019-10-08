@@ -2,12 +2,15 @@ require 'selenium-webdriver'
 require 'rspec'
 require 'pry'
 
-require '/home/administrator/projects/ruby_cucumber_selenium_framework/base/elements.rb'
-require '/home/administrator/projects/ruby_cucumber_selenium_framework/base/methods.rb'
-require '/home/administrator/projects/ruby_cucumber_selenium_framework/base/pathes.rb'
-require '/home/administrator/projects/ruby_cucumber_selenium_framework/base/base_page.rb'
-Dir['/home/administrator/projects/ruby_cucumber_selenium_framework/initializers/*.rb'].each { |file| require file }
-Dir['/home/administrator/projects/ruby_cucumber_selenium_framework/pages/*.rb'].each { |file| require file }
+# Initialize block
+PROJECT_PATH = '/home/administrator/projects/ruby_cucumber_selenium_framework'.freeze
+
+# Adding files
+require "#{PROJECT_PATH}/base/elements.rb"
+require "#{PROJECT_PATH}/base/methods.rb"
+require "#{PROJECT_PATH}/base/pathes.rb"
+require "#{PROJECT_PATH}/base/base_page.rb"
+Dir["#{PROJECT_PATH}/pages/*.rb"].each { |file| require file }
 
 Before do |scenario|
   puts 'Before block'
