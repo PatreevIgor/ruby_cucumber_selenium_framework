@@ -30,6 +30,6 @@ class Google < BasePage
   end
 
   def first_element_locator
-    { xpath: '//*[@id="rso"]/div[1]/div/div/div/div[1]/a/h3/div' }
+    { xpath: "//h3[contains(.,'Selenium Python - Selenium Python')]" }
   end
 end
